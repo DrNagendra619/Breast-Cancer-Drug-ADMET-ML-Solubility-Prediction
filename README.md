@@ -1,119 +1,145 @@
 # Breast-Cancer-Drug-ADMET-ML-Solubility-Prediction
+
 Machine learning models for predicting aqueous solubility (ESOL Log S) of breast cancer drug candidates using ADMET descriptors. Includes multiple regression algorithms, trained models, and performance comparison.
-Breast Cancer Drug ADMET Solubility Prediction using Machine Learning
+
+---
+
+## Breast Cancer Drug ADMET Solubility Prediction using Machine Learning
 
 This repository contains machine learning models developed to predict the aqueous solubility (ESOL Log S) of potential breast cancer drug candidates using ADMET descriptors. Solubility prediction is an important step in drug discovery because it influences absorption, distribution, and overall drug efficacy. The project applies several regression algorithms and compares their predictive performance.
 
-Project Objective
+---
 
-The primary goal of this project is to build and evaluate machine learning models capable of predicting the aqueous solubility of compounds using molecular ADMET features. By comparing multiple algorithms, the project identifies the most reliable model for solubility prediction, which can help prioritize compounds during early-stage drug discovery.
+## Project Objective
 
-Dataset
+The primary goal of this project is to build and evaluate machine learning models capable of predicting the aqueous solubility of compounds using molecular ADMET features.
 
-The dataset used in this project consists of molecular descriptors and ADMET-related properties used as input features. The target variable for prediction is ESOL Log S, which represents the logarithmic aqueous solubility of compounds. Text-based columns such as compound name, SMILES strings, and chemical formulas are removed during preprocessing so that only numerical descriptors are used for model training.
+By comparing multiple algorithms, the project identifies the most reliable model for solubility prediction, which can help prioritize compounds during early-stage drug discovery.
 
-Machine Learning Models Used
+---
+
+## Dataset
+
+The dataset used in this project consists of molecular descriptors and ADMET-related properties used as input features.
+
+The target variable for prediction is **ESOL Log S**, which represents the logarithmic aqueous solubility of compounds.
+
+During preprocessing:
+
+- Text-based columns such as compound name
+- SMILES strings
+- Chemical formulas
+
+were removed so that only **numerical descriptors** are used for model training.
+
+---
+
+## Machine Learning Models Used
 
 Six regression algorithms were trained and evaluated in this project:
 
-Ridge Regression
-Gradient Boosting Regressor
-Random Forest Regressor
-ElasticNet Regression
-K-Nearest Neighbors Regressor
-Support Vector Regression
+- Ridge Regression  
+- Gradient Boosting Regressor  
+- Random Forest Regressor  
+- ElasticNet Regression  
+- K-Nearest Neighbors Regressor  
+- Support Vector Regression  
 
-These models were selected to compare both linear and non-linear machine learning approaches for predicting solubility.
+These models were selected to compare both **linear and non-linear machine learning approaches** for predicting solubility.
 
-Project Workflow
+---
+
+## Project Workflow
 
 The workflow of this project follows a standard machine learning pipeline:
 
-Load and preprocess the ADMET dataset
+1. Load and preprocess the ADMET dataset  
+2. Remove non-numeric features  
+3. Separate input features and target variable (ESOL Log S)  
+4. Split the dataset into training and testing sets  
+5. Standardize features using feature scaling  
+6. Train multiple regression models  
+7. Evaluate model performance using R² score and RMSE  
+8. Save trained models for future prediction  
 
-Remove non-numeric features
+---
 
-Separate input features and target variable (ESOL Log S)
+## Model Performance
 
-Split the dataset into training and testing sets
+The performance of each algorithm was evaluated using:
 
-Standardize features using feature scaling
+- **Coefficient of Determination (R² Score)**
+- **Root Mean Squared Error (RMSE)**
 
-Train multiple regression models
+### Results
 
-Evaluate model performance using R² score and RMSE
+**Ridge Regression**
+- R² Score: **0.9867**
+- RMSE: **0.1780**
 
-Save trained models for future prediction
+**Gradient Boosting Regressor**
+- R² Score: **0.9864**
+- RMSE: **0.1795**
 
-Model Performance
+**Random Forest Regressor**
+- R² Score: **0.9757**
+- RMSE: **0.2402**
 
-The performance of each algorithm was evaluated using the coefficient of determination (R² Score) and Root Mean Squared Error (RMSE).
+**ElasticNet Regression**
+- R² Score: **0.9572**
+- RMSE: **0.3189**
 
-Ridge Regression achieved the highest performance with an R² score of 0.9867 and RMSE of 0.1780.
-Gradient Boosting also performed strongly with an R² score of 0.9864 and RMSE of 0.1795.
-Random Forest achieved an R² score of 0.9757 with RMSE of 0.2402.
-ElasticNet achieved an R² score of 0.9572 with RMSE of 0.3189.
-K-Nearest Neighbors achieved an R² score of 0.7723 with RMSE of 0.7359.
-Support Vector Regression achieved an R² score of 0.6570 with RMSE of 0.9031.
+**K-Nearest Neighbors Regressor**
+- R² Score: **0.7723**
+- RMSE: **0.7359**
 
-Among all models, Ridge Regression and Gradient Boosting demonstrated the best predictive accuracy.
+**Support Vector Regression**
+- R² Score: **0.6570**
+- RMSE: **0.9031**
 
-Repository Structure
+Among all models, **Ridge Regression** and **Gradient Boosting** demonstrated the best predictive accuracy.
 
-ML_model_accuracy_predictions.ipynb – Notebook containing model training, evaluation, and prediction workflow
-Six_Models_Performance_Metrics.csv – Performance comparison of all machine learning models
-Ridge_Regression_Model.pkl – Trained Ridge Regression model
-Gradient_Boosting_Model.pkl – Trained Gradient Boosting model
-Random_Forest_Model.pkl – Trained Random Forest model
-ElasticNet_Model.pkl – Trained ElasticNet model
-K-Nearest_Neighbors_Model.pkl – Trained KNN model
-Support_Vector_Regression_Model.pkl – Trained SVR model
+---
 
-Technologies and Libraries
+## Repository Structure
 
-Python
-Pandas
-NumPy
-Scikit-learn
-Joblib
-Google Colab / Jupyter Notebook
+ML_model_accuracy_predictions.ipynb  
+Notebook containing model training, evaluation, and prediction workflow
 
-How to Use the Models
+Six_Models_Performance_Metrics.csv  
+Performance comparison of all machine learning models
 
-Clone this repository to your local system.
+Ridge_Regression_Model.pkl  
+Trained Ridge Regression model
 
-git clone https://github.com/yourusername/Breast-Cancer-Drug-ADMET-ML-Solubility-Prediction.git
+Gradient_Boosting_Model.pkl  
+Trained Gradient Boosting model
 
-Install required dependencies.
+Random_Forest_Model.pkl  
+Trained Random Forest model
 
-pip install pandas scikit-learn joblib numpy
+ElasticNet_Model.pkl  
+Trained ElasticNet model
 
-Load a saved model in Python.
+K-Nearest_Neighbors_Model.pkl  
+Trained KNN model
 
-import joblib
-model = joblib.load("Ridge_Regression_Model.pkl")
+Support_Vector_Regression_Model.pkl  
+Trained SVR model
 
-Use the model to make predictions on new molecular descriptor data.
+---
 
-Applications
+## Technologies and Libraries
 
-Drug discovery and development
-Early-stage screening of breast cancer drug candidates
-Computational ADMET prediction
-Machine learning in bioinformatics and cheminformatics
+Python  
+Pandas  
+NumPy  
+Scikit-learn  
+Joblib  
+Google Colab / Jupyter Notebook  
 
-Future Improvements
+---
 
-Incorporate additional molecular descriptors and fingerprints
-Use deep learning models for prediction
-Perform hyperparameter optimization for improved performance
-Develop a web interface for real-time prediction
-Expand the dataset to include more compounds
+## How to Use the Models
 
-License
-
-This project is released under the MIT License. You are free to use, modify, and distribute this project with proper attribution.
-
-Author
-
-Developed as part of a computational drug discovery and machine learning project focused on predicting ADMET-related properties of breast cancer drug candidates.
+Clone this repository to your local system:
