@@ -1,0 +1,7 @@
+Algorithm,R2 Score,RMSE
+Ridge Regression,0.9867,0.178
+Gradient Boosting,0.9864,0.1795
+Random Forest,0.9757,0.2402
+ElasticNet,0.9572,0.3189
+K-Nearest Neighbors,0.7723,0.7359
+Support Vector Regression,0.657,0.9031
